@@ -46,7 +46,17 @@ Models were evaluated using metrics such as:
 - Recall
 - F1 Score
 - ROC-AUC Curve
+# Distribution
 
+# Cut the window in 2 parts
+f, (ax_box, ax_hist) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.15, .85)})
+sns.set(style="darkgrid")
+
+# Add a graph in each part
+sns.boxplot(df["Debt ratio %"], orient = 'h', ax=ax_box)
+sns.distplot(df["Debt ratio %"], ax=ax_hist)
+ax_hist.set(xlabel='Debt Ratio %')
+plt.show()
 ## Model Comparison and Selection
 A comparative analysis was performed across models to identify the best-performing algorithm.
 
