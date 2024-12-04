@@ -123,7 +123,8 @@ Distribution by target class
 ---
 
 ## Data Processing
-1. **Class Balancing:** Used SMOTE to handle class imbalance.[image](https://github.com/user-attachments/assets/92133d89-a703-41ce-b428-4d463f6c65c9)
+1. **Class Balancing:** Used SMOTE to handle class imbalance.![image](https://github.com/user-attachments/assets/7f5291b5-1a7f-4351-a7dc-a82dd86be79d)
+
 
 2. **Feature Engineering:** Selected features with the highest correlation to the target.
 3. **Data Splitting:** 80% training and 20% testing.
@@ -183,7 +184,7 @@ Feature importance analysis highlighted:
 - Cash flow indicators
 - Profitability metrics
 
-![Feature Importance](images/feature_importance.png)
+![Feature Importance]
 
 ---
 
