@@ -1,4 +1,4 @@
-# Bankruptcy Prrediction Model
+# Bankruptcy Prediction Model
 
 This project predicts the likelihood of bankruptcy using financial metrics. The analysis involves exploratory data analysis (EDA), feature engineering, model building, and performance evaluation.
 
