@@ -13,7 +13,8 @@ This project predicts the likelihood of bankruptcy using financial metrics. The 
 - [Model Building](#model-building)
 - [Performance Evaluation](#performance-evaluation)
 - [Model Comparison and Results](#model-comparison-and-results)
-- [Limitations and Future Work](#limitations-and-future-work)
+- [Socialization and Distribution](#socialization-and-distribution)
+- [Value and Next Steps](#value-and-next-steps)
 - [How to Run](#how-to-run)
 - [Requirements](#requirements)
 - [License](#license)
@@ -48,6 +49,7 @@ The heatmap reveals the correlation between features and the target variable.
 
 ## Top Correlated Features
 
+### Exploration of Top 10 Most Correlated Features to Target
 1. **Debt Ratio %**
    - Highly correlated with bankruptcy.
    - Skewed distribution with concentrated values.
@@ -63,15 +65,38 @@ The heatmap reveals the correlation between features and the target variable.
    - Key differentiator for bankruptcy cases.
    - ![Borrowing Dependency Pairplot](images/borrowing_dependency_pairplot.png)
 
-4. **Liability to Equity**
+4. **Current Liability to Current Assets**
+   - Measures the ratio of current liabilities to current assets.
+   - Affects the financial health of firms.
+   - ![Current Liability to Current Assets Pairplot](images/current_liability_to_assets_pairplot.png)
+
+5. **Liability to Equity**
    - Measures leverage.
    - Displays notable clustering for bankrupt firms.
    - ![Liability to Equity Pairplot](images/liability_to_equity_pairplot.png)
 
-5. **Total Expense to Assets**
+6. **Current Liabilities to Equity**
+   - Indicates the proportion of current liabilities compared to equity.
+   - A significant predictor of financial instability.
+   - ![Current Liabilities to Equity Pairplot](images/current_liabilities_to_equity_pairplot.png)
+
+7. **Current Liability to Equity**
+   - Similar to the previous feature, focused specifically on equity utilization.
+   - ![Current Liability to Equity Pairplot](images/current_liability_to_equity_pairplot.png)
+
+8. **Liability-Assets Flag**
+   - Binary feature indicating whether liabilities exceed assets.
+   - ![Liability Assets Flag Pairplot](images/liability_assets_flag_pairplot.png)
+
+9. **Total Expense to Assets**
    - Indicates asset efficiency in managing expenses.
    - Positively linked with bankruptcy.
    - ![Total Expense to Assets Pairplot](images/total_expense_assets_pairplot.png)
+
+10. **Equity to Long-term Liability**
+    - Captures the ratio of equity to long-term liabilities.
+    - Highlights a company's ability to manage long-term debt.
+    - ![Equity to Long-term Liability Pairplot](images/equity_to_long_term_liability_pairplot.png)
 
 ---
 
@@ -84,9 +109,11 @@ The heatmap reveals the correlation between features and the target variable.
 
 ## Model Building
 Implemented the following machine learning models:
+- Logistic Regression
 - Decision Tree
 - Random Forest
 - Gradient Boosting (XGBoost)
+- Support Vector Machines (SVM)
 
 ---
 
@@ -105,9 +132,6 @@ The confusion matrices for the models provide insights into the classification r
   ![Confusion Matrix XGBoost](images/confusion_matrix_xgb.png)
 
 ### Metrics
-
-![image](https://github.com/user-attachments/assets/95a86f14-c74f-4b86-94d5-0a44cfcfde3b)
-
 The following table summarizes the performance metrics for each model:
 
 | Model               | Accuracy | Precision | Recall  | F1 Score | ROC AUC  |
@@ -124,20 +148,37 @@ The following table summarizes the performance metrics for each model:
   - Highest accuracy (83.26%)
   - Highest ROC-AUC (0.9647)
   - Balanced precision (0.965) and recall (0.6902)
+- Chose to prioritize both accuracy and recall as accuracy can be misleading in imbalanced datasets, but recall shows the true positive rate.
 
-- The confusion matrices reveal that XGBoost effectively reduces false negatives compared to other models.
+![ROC Curve](images/roc_curve.png)
+
+### Feature Importance
+Feature importance analysis highlighted:
+- Financial ratios
+- Cash flow indicators
+- Profitability metrics
+
+![Feature Importance](images/feature_importance.png)
 
 ---
 
-## Limitations and Future Work
+## Socialization and Distribution
+Sharing results with stakeholders through:
+- **Monthly Updates:** Dashboards displaying predictions and key drivers for a company’s financial operations.
+- **Web Application:** Broader distribution for quick access to predictions and insights.
 
-### Limitations
-- Imbalanced data may affect minority class predictions.
-- Limited interpretability of ensemble models like Gradient Boosting.
+---
 
-### Future Work
-- Test on external datasets to validate generalizability.
-- Explore additional financial features or macroeconomic indicators.
+## Value and Next Steps
+
+### Value
+- **Identify Risks Early:** Predict bankruptcy beforehand to prevent financial collapse.
+
+### Next Steps
+- Expand functionality to businesses under varied business regulations.
+- Improve the model by selecting critical parameters to enhance predictive accuracy.
+- Conduct hyper-parameter tuning to optimize recall.
+- Collect additional data from recent financial periods to enhance applicability.
 
 ---
 
