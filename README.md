@@ -105,6 +105,9 @@ The confusion matrices for the models provide insights into the classification r
   ![Confusion Matrix XGBoost](images/confusion_matrix_xgb.png)
 
 ### Metrics
+
+![image](https://github.com/user-attachments/assets/95a86f14-c74f-4b86-94d5-0a44cfcfde3b)
+
 The following table summarizes the performance metrics for each model:
 
 | Model               | Accuracy | Precision | Recall  | F1 Score | ROC AUC  |
