@@ -133,11 +133,9 @@ Distribution by target class
 
 ## Model Building
 Implemented the following machine learning models:
-- Logistic Regression
 - Decision Tree
 - Random Forest
 - Gradient Boosting (XGBoost)
-- Support Vector Machines (SVM)
 
 ---
 
